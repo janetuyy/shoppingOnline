@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Meow Shop{% endblock %}</title>
+    <link href="{% static 'main/css/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div id="header">
+    <ul><img src="{% static 'main/img/paws.svg' %}" id="paws"><a href="/" class="logo">Meow Shop</a></ul>
+    <ul><button id="cartBtn"><a href="cart/" class="cart">Kitten's cart</a></button>
+        <button id="accBtn"><a href="account/" class="account">Kitten's account</a></button></ul>
+</div>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<footer>
+    <p>Meow Shop ©2024.</p>
+</footer>
+</body>
+</html>
