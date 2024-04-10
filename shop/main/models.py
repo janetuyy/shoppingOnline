@@ -15,9 +15,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField("Название", max_length=50)
     slug = models.SlugField("Slug", max_length=200, db_index=True)
-    cover = models.ImageField("Фото", upload_to="products/%Y/%m/%d", blank=True)
+    cover = models.ImageField("Фото", upload_to="images/", blank=True)
     description = models.CharField("Краткое описание", max_length=250)
     full_text = models.TextField("Основная информация")
     price = models.DecimalField("Цена", max_digits=10, decimal_places=2)
@@ -31,5 +32,6 @@ class Product(models.Model):
 
     class Meta:
         ordering = ("name",)
+        index_together = (('id', 'slug'),)
         verbose_name = "Товар"
         verbose_name_plural = "Товары"

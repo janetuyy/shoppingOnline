@@ -20,14 +20,18 @@
     </div>
     <div id="main" class="product-list">
         <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-        {% if products %}
-            {% for el in products %}
-                <div>
-                    <h3>{{ el.name }}</h3>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>Нет предложений по заданному фильтру</p>
-        {% endif %}
+        <div class="products-container">
+            {% if products %}
+                {% for el in products %}
+                    <div class="product-container">
+                        <a><img class="loadedPhoto" src="{{ el.cover.url }}"></a>
+                        <h3>{{ el.name }}</h3>
+                        <a>{{ el.price }} ₽</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Нет предложений по заданному фильтру</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
