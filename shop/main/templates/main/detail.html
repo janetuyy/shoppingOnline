@@ -5,5 +5,12 @@
 {% endblock %}
 
 {% block content %}
-
+    <div class="product-detail">
+        <img class="loadedPhoto" src="{% if product.cover %}{{ product.cover.url }}{% else %}{% endif %}">
+        <h1>{{ product.name }}</h1>
+        <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+        <p class="price">${{ product.price }}</p>
+        {{ product.description|linebreaks }}
+        {{ product.full_text|linebreaks }}
+    </div>
 {% endblock %}

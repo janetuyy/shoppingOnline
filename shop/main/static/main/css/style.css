@@ -67,3 +67,7 @@ button:hover, button:focus {
     padding: 10px;
     border-color: #7D00E6;
 }
+
+.product-detail {
+    margin: 10% 20% 10% 20%;
+}
