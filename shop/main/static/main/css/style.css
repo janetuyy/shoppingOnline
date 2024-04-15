@@ -27,7 +27,7 @@ footer {
 }
 
 
-#cartBtn, #accBtn {
+#cartBtn, #accBtn, #addCartBtn {
     background-color: #7D00E6;
     border-radius: 10px;
     margin-left: 10px;
@@ -58,7 +58,7 @@ button:hover, button:focus {
 .products-container {
     display: flex;
 }
-.product-container {
+.product-container, .tabl {
     margin: 10px;
 }
 
@@ -70,4 +70,13 @@ button:hover, button:focus {
 
 .product-detail {
     margin: 10% 20% 10% 20%;
+}
+
+.cartText {
+    color: black;
+}
+
+.cartContent {
+    justify-content: space-between;
+    width: 100%;
 }
