@@ -15,6 +15,6 @@ def order_created(order_id):
                f'Номер вашего заказа: {order.id}.'
      mail_sent = send_mail(subject,
                            message,
-                           'admin@shop.com',
+                           'janetuyy@gmail.com',
                            [order.email])
      return mail_sent

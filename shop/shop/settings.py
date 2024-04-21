@@ -132,5 +132,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 CART_SESSION_ID = 'cart'
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 CELERY_BROKER_URL='amqp://guest:guest@localhost:5672//'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'janetuyy@gmail.com'
+EMAIL_HOST_PASSWORD = 'zmwkrliuwycjxyqn'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

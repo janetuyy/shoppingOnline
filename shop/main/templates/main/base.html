@@ -9,8 +9,8 @@
 </head>
 <body>
 <div id="header">
-    <ul><img src="{% static 'main/img/paws.svg' %}" id="paws"><a href="/" class="logo">Meow Shop</a></ul>
-    <ul><form action="" method="get"><input type="search" class="search-bar" placeholder="Я ищу..." value aria-label="search" maxlength="100"></form></ul>
+    <ul><img src="{% static 'main/img/paws.svg' %}" id="paws"><a href="{% url 'shop:main' %}" class="logo">Meow Shop</a></ul>
+<!--    <ul><form action="" method="get"><input type="search" class="search-bar" placeholder="Я ищу..." value aria-label="search" maxlength="100"></form></ul>-->
     <ul><button id="cartBtn">
     {% with total_items=cart|length %}
         {% if cart|length > 0 %}
@@ -19,10 +19,10 @@
                 {{ cart.get_total_price }} ₽
             </a>
         {% else %}
-            <a href="cart/" class="cart"><img src="{% static 'main/img/cart.svg' %}"></a></button>
+            <a href="{% url 'cart:cart_detail' %}" class="cart"><img src="{% static 'main/img/cart.svg' %}"></a></button>
         {% endif %}
     {% endwith %}</button>
-        <button id="accBtn"><a href="account/" class="account">Kitten's account</a></button></ul>
+<!--        <button id="accBtn"><a href="{% url 'shop:account' %}" class="account">Аккаунт</a></button></ul>-->
 </div>
 <div id="content">
     {% block content %}
